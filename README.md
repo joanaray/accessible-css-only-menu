@@ -5,7 +5,7 @@ A frontend exercise about making an accessible CSS-only burger menu with checkbo
 You can check the demo and read the full article about it here: [https://joana.cc/sandbox/css-menu/]
 
 ## summary
-I was talking to my friend Samuel about frontend development and the use of JS for "nice-to-have" features and he shared this idea of an animated menu with CSS only, using a checkbox.
+I was talking to my friend @Trakina about frontend development and the use of JS for "nice-to-have" features and he shared this idea of an animated menu with CSS only, using a checkbox.
 
 The basic idea was to use a label to control a checkbox's :checked state and then use that as a reference to animate its sibling containing the menu.
 
