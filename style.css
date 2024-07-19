@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color-x-light: hsl(19, 84%, 98%);
+  --color-light: hsl(19, 84%, 88%); /* #fad6c5 */
+  --color-light-sat: hsl(19, 24%, 58%);
+  --color-dark: hsl(213, 44%, 15%); /* #152436 */
+  --color-x-dark: hsl(213, 44%, 5%);
+
+  height: 100%;
+  margin: 0;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 400;
+}
+
+*,
+*::before,
+*::after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  color: var(--color-light);
+  transition: all 250ms ease-in-out;
+}
+a:hover {
+  color: var(--color-dark);
+}
+
+button {
+  padding: 0.5em 1em;
+  background-color: var(--color-light);
+  border: 1px solid var(--color-dark);
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover,
+button:has(+ #button-nav:popover-open),
+button:where(:focus, :focus-visible, :focus-within) {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+button:where(:focus, :focus-visible, :focus-within),
+label:has(+ input[type="checkbox"]:focus),
+label:has(+ input[type="checkbox"]:focus-visible),
+label:has(+ input[type="checkbox"]:focus-within) {
+  outline: 2px dotted var(--color-dark);
+  outline-offset: 2px;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: var(--color-light);
+  padding: 0.5em 2em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+}
+label {
+  display: inline-block;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+label:hover,
+label:has(+ input[type="checkbox"]:focus),
+label:has(+ input[type="checkbox"]:focus-visible),
+label:has(+ input[type="checkbox"]:focus-within),
+label:has(+ input[type="checkbox"]:checked) {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+input[type="checkbox"] {
+  inset: 0;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+nav {
+  & ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    & li {
+      border: 1px solid var(--color-dark);
+      & > * {
+        padding: 0.5em 1em;
+      }
+    }
+    & li + li {
+      border-top: 0;
+    }
+    & li:hover {
+      background-color: var(--color-light-sat);
+      color: var(--color-light);
+      & a {
+        color: var(--color-x-light);
+      }
+    }
+    & a {
+      display: inline-block;
+      color: var(--color-dark);
+    transition: none;
+    }
+    & a:hover {
+      color: var(--color-light);
+    }
+  }
+}
+#checkbox-nav {
+  position: absolute;
+  top: calc(53px - .5em);
+  right: 0;
+  overflow: hidden;
+  & ul {
+    opacity: 0;
+    transform: translateY(-200%);
+    transition: transform 250ms ease-in-out;
+  }
+}
+
+input[type="checkbox"]:checked + #checkbox-nav > ul {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#button-nav {
+  position: fixed;
+  background: none;
+  border: 0;
+}
+
+#button-nav:popover-open {
+  display: flex;
+  justify-content: flex-end;
+  margin: 53px 0 auto auto;
+  padding: 0 2em;
+}

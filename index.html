@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+  </head>
+  <body>
+    <header>
+      <div>
+        <label for="menu-btn">Checkbox menu</label>
+        <input type="checkbox" name="menu-btn" id="menu-btn" />
+        <nav id="checkbox-nav">
+          <ul>
+            <li><a href="#solution-checkbox">Checkbox method</a></li>
+            <li><a href="#solution-popover">Popover method</a></li>
+            <li><a href="#final-remarks">Final remarks</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <button popovertarget="button-nav" popovertargetaction="toggle">
+          Button menu
+        </button>
+        <nav id="button-nav" popover>
+          <ul>
+            <li><a href="#solution-checkbox">Checkbox method</a></li>
+            <li><a href="#solution-popover">Popover method</a></li>
+            <li><a href="#final-remarks">Final remarks</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>    
+  </body>
+</html>
